@@ -12,12 +12,14 @@ $categories: ingredients $blue, appareils $teal, ustensils $red;
 
       &::placeholder {
         opacity: 0.5;
+        text-transform: none;
       }
     }
 
     &::placeholder {
       color: $white;
       font-weight: 700;
+      text-transform: capitalize;
     }
   }
 }

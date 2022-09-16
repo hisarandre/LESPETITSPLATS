@@ -35,33 +35,38 @@
           <!--search options-->
           <div class="row">
             <!--search ingredients-->
-            <div class="combobox-wrapper col-lg-2 col-md-4">
+            <div class="combobox-wrapper col-lg-2 col-md-4 mb-2">
               <label for="ingredient" class="sr-only">Ingredients</label>
 
               <div class="input-group">
-                <input class="form-control form-control-lg py-4 ingredients" id="ingredient" placeholder="Ingredients" />
+                <input
+                  class="form-control form-control-lg py-4 ingredients"
+                  id="ingredient"
+                  data-category="ingredient"
+                  placeholder="Ingredients"
+                />
                 <div class="input-group-text basic-addon2 ingredients">
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
               </div>
 
               <ul class="content ingredients p-3 list-unstyled">
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
-                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="lait">Lait</li>
+                <li data-option="lait de coco">Lait de coco</li>
+                <li data-option="pomme">Pomme</li>
+                <li data-option="Frommage">Fromage</li>
+                <li data-option="Farine">Farine</li>
+                <li data-option="Oeufs">Oeufs</li>
+                <li data-option="Courgettes">Courgettes</li>
+                <li data-option="Noix">Noix</li>
               </ul>
             </div>
             <!--bouton Appareils-->
-            <div class="combobox-wrapper col-lg-2 col-md-4">
+            <div class="combobox-wrapper col-lg-2 col-md-4 mb-2">
               <label for="appareil" class="sr-only">Appareils</label>
 
               <div class="input-group">
-                <input class="form-control form-control-lg py-4 appareils" id="appareil" placeholder="Appareils" />
+                <input class="form-control form-control-lg py-4 appareils" id="appareil" data-category="appareil" placeholder="Appareils" />
                 <div class="input-group-text basic-addon2 appareils">
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
@@ -79,11 +84,11 @@
               </ul>
             </div>
             <!--bouton ustensils-->
-            <div class="combobox-wrapper col-lg-2 col-md-4">
+            <div class="combobox-wrapper col-lg-2 col-md-4 mb-2">
               <label for="ustensil" class="sr-only">Ustensils</label>
 
               <div class="input-group">
-                <input class="form-control form-control-lg py-4 ustensils" id="ustensil" placeholder="Ustensils" />
+                <input class="form-control form-control-lg py-4 ustensils" id="ustensil" data-category="ustensil" placeholder="Ustensils" />
                 <div class="input-group-text basic-addon2 ustensils">
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
@@ -105,7 +110,83 @@
         </section>
 
         <!--RECIPES SECTION-->
-        <section class="row row-cols-1 row-cols-md-3 g-4" id="recipes-section"></section>
+        <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4" id="recipes-section">
+          <div class="col">
+            <article class="card h-100">
+              <div class="card-img"></div>
+              <div class="card-body">
+                <header class="row card-header my-2">
+                  <h2 class="col-8 card-title">Titre de la rectte</h2>
+                  <p class="col-4 card-timing">10 min</p>
+                </header>
+
+                <div class="row card-infos">
+                  <ul class="col-5 card-list list-unstyled">
+                    <li>Lait de coco: 400ml</li>
+                    <li>Jus de citron: 2</li>
+                    <li>Créme de coco: 4 cuillères</li>
+                    <li>Sucre: 20g</li>
+                    <li>Glaçons: 2</li>
+                  </ul>
+                  <p class="col-7 card-text">
+                    Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre.
+                    Mixer jusqu'à avoir la consistence désirée.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100">
+              <div class="card-img"></div>
+              <div class="card-body">
+                <header class="row card-header my-2">
+                  <h2 class="col-8 card-title">Titre de la rectte</h2>
+                  <p class="col-4 card-timing">10 min</p>
+                </header>
+
+                <div class="row card-infos">
+                  <ul class="col-5 card-list list-unstyled">
+                    <li>Lait de coco: 400ml</li>
+                    <li>Jus de citron: 2</li>
+                    <li>Créme de coco: 4 cuillères</li>
+                    <li>Sucre: 20g</li>
+                    <li>Glaçons: 2</li>
+                  </ul>
+                  <p class="col-7 card-text">
+                    Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre.
+                    Mixer jusqu'à avoir la consistence désirée.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100">
+              <div class="card-img"></div>
+              <div class="card-body">
+                <header class="row card-header my-2">
+                  <h2 class="col-8 card-title">Titre de la rectte</h2>
+                  <p class="col-4 card-timing">10 min</p>
+                </header>
+
+                <div class="row card-infos">
+                  <ul class="col-5 card-list list-unstyled">
+                    <li>Lait de coco: 400ml</li>
+                    <li>Jus de citron: 2</li>
+                    <li>Créme de coco: 4 cuillères</li>
+                    <li>Sucre: 20g</li>
+                    <li>Glaçons: 2</li>
+                  </ul>
+                  <p class="col-7 card-text">
+                    Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre.
+                    Mixer jusqu'à avoir la consistence désirée.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -113,7 +194,7 @@
       <article class="card h-100">
         <div class="card-img"></div>
         <div class="card-body">
-          <header class="row card-header">
+          <header class="row card-header my-2">
             <h2 class="col-8 card-title"></h2>
             <p class="col-4 card-timing"></p>
           </header>
