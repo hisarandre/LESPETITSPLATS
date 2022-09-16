@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/8410bc1a9a.js" crossorigin="anonymous"></script>
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <title>Les petits plats</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="col"><img class="logo mx-auto mt-5 mb-4" src="assets/logo.png" alt="Logo les petits plats - Homepage" /></div>
+      </header>
+
+      <main>
+        <!--SEARCH SECTION-->
+        <section id="search-section">
+          <!--search recipes-->
+          <div class="row">
+            <div class="col form-group">
+              <label for="search-bar" class="sr-only">Rechercher une recette</label>
+              <div class="input-group mb-4">
+                <input type="text" class="form-control form-control-lg py-3" id="search-bar" placeholder="Rechercher une recette" />
+                <div class="input-group-text basic-addon2">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--search options-->
+          <div class="row">
+            <!--search ingredients-->
+            <div class="combobox-wrapper col-lg-2 col-md-4">
+              <label for="ingredient" class="sr-only">Ingredients</label>
+
+              <div class="input-group">
+                <input class="form-control form-control-lg py-4 ingredients" id="ingredient" placeholder="Ingredients" />
+                <div class="input-group-text basic-addon2 ingredients">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </div>
+
+              <ul class="content ingredients p-3 list-unstyled">
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+              </ul>
+            </div>
+            <!--bouton Appareils-->
+            <div class="combobox-wrapper col-lg-2 col-md-4">
+              <label for="appareil" class="sr-only">Appareils</label>
+
+              <div class="input-group">
+                <input class="form-control form-control-lg py-4 appareils" id="appareil" placeholder="Appareils" />
+                <div class="input-group-text basic-addon2 appareils">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </div>
+
+              <ul class="content appareils p-3 list-unstyled">
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+              </ul>
+            </div>
+            <!--bouton ustensils-->
+            <div class="combobox-wrapper col-lg-2 col-md-4">
+              <label for="ustensil" class="sr-only">Ustensils</label>
+
+              <div class="input-group">
+                <input class="form-control form-control-lg py-4 ustensils" id="ustensil" placeholder="Ustensils" />
+                <div class="input-group-text basic-addon2 ustensils">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </div>
+
+              <ul class="content ustensils p-3 list-unstyled">
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+                <li data-option="Ingredient">Ingredient</li>
+              </ul>
+            </div>
+            <!--fin bouton-->
+          </div>
+        </section>
+
+        <!--RECIPES SECTION-->
+        <section class="row row-cols-1 row-cols-md-3 g-4" id="recipes-section"></section>
+      </main>
+    </div>
+
+    <template class="col">
+      <article class="card h-100">
+        <div class="card-img"></div>
+        <div class="card-body">
+          <header class="row card-header">
+            <h2 class="col-8 card-title"></h2>
+            <p class="col-4 card-timing"></p>
+          </header>
+
+          <div class="row card-infos">
+            <ul class="col-5 card-list list-unstyled">
+              <li></li>
+            </ul>
+            <p class="col-7 card-text"></p>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <!-- App -->
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>

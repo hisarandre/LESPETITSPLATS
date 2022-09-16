@@ -1,0 +1,23 @@
+.card {
+  &-img {
+    background: #c7bebe;
+    height: 12rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  &-infos {
+    font-size: 14px;
+  }
+
+  &-timing {
+    text-align: right;
+    font-weight: 700;
+
+    &::before {
+      content: "\f017";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+  }
+}

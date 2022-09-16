@@ -1,0 +1,23 @@
+.combobox-wrapper {
+  .content {
+    display: none;
+  }
+
+  .fa-chevron-down {
+    transition: rotate 0.4s ease-in-out;
+  }
+
+  &.active {
+    .content {
+      line-height: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-radius: 0 0 0.5rem 0.5rem;
+      margin-top: -10px;
+    }
+
+    .fa-chevron-down {
+      rotate: 180deg;
+    }
+  }
+}
