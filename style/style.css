@@ -7029,7 +7029,13 @@ textarea.form-control-lg {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 .card-infos {
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.3;
+  max-height: 9.6rem;
+}
+.card-text {
+  max-height: 8.7rem;
+  overflow: hidden;
 }
 .card-timing {
   text-align: right;

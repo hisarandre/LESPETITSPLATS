@@ -48,7 +48,6 @@ export class Combobox {
 
   reset() {
     const $comboboxOpen = document.querySelectorAll(".combobox-wrapper.active").length > 0;
-
     if ($comboboxOpen) {
       this.close();
     }
