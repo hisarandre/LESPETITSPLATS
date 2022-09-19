@@ -1,29 +1,33 @@
 export class Combobox {
   constructor() {
+    this._$inputs = document.querySelectorAll(".combobox-wrapper input");
     this._$inputIngredient = document.getElementById("ingredient");
     this._$inputAppareil = document.getElementById("appareil");
     this._$inputUstensil = document.getElementById("ustensil");
     this._$options = document.querySelectorAll(".combobox-wrapper li");
   }
 
-  addEventListener() {
+  handleEvent() {
     //show and close combobox
     document.body.addEventListener("click", (e) => {
       var anyInput = e.target === this._$inputUstensil || e.target === this._$inputAppareil || e.target === this._$inputIngredient;
       anyInput ? this.show(e) : this.reset();
     });
 
-    //select the option
+    // hide element list if clicked
     this._$options.forEach((option) =>
       option.addEventListener("click", (e) => {
-        this.selectOption(e);
-        this.close();
+        e.target.style.display = "none";
       })
     );
-  }
 
-  selectOption(e) {
-    console.log(e.target.dataset.option);
+    // filter input
+    this._$inputs.forEach((input) =>
+      input.addEventListener("keyup", () => {
+        let $combolist = input.parentNode.parentNode.lastElementChild;
+        $combolist.innerHTML = "";
+      })
+    );
   }
 
   show(e) {
@@ -31,8 +35,7 @@ export class Combobox {
     let $category = e.target.dataset.category;
 
     this.reset();
-    $combobox.classList.add("active", "col-lg-6", "col-md-8");
-    $combobox.classList.remove("col-lg-2", "col-md-4");
+    $combobox.classList.add("active");
     e.target.setAttribute("placeholder", "Rerchercher un " + $category);
   }
 
@@ -41,8 +44,7 @@ export class Combobox {
     let $input = document.querySelector(".combobox-wrapper.active input");
     let $category = $input.dataset.category;
 
-    $combobox.classList.remove("active", "col-lg-6", "col-md-8");
-    $combobox.classList.add("col-lg-2", "col-md-4");
+    $combobox.classList.remove("active");
     $input.setAttribute("placeholder", $category + "s");
   }
 
@@ -54,6 +56,6 @@ export class Combobox {
   }
 
   render() {
-    this.addEventListener();
+    this.handleEvent();
   }
 }

@@ -1,0 +1,19 @@
+#tags-wrapper {
+  li {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+
+    &::after {
+      content: "\f057";
+      font-size: 18px;
+      margin-left: 0.8rem;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 500;
+    }
+  }
+}
