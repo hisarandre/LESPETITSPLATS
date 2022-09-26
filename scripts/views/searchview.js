@@ -1,5 +1,3 @@
-//OBSERVER/SUBJECT
-
 export class SearchView {
   constructor() {
     this._$searchInput = document.getElementById("search-bar");
@@ -14,7 +12,7 @@ export class SearchView {
     this._$recipesSection.innerHTML = "";
   }
 
-  udapte() {
-    //envoie dans recipecard?
+  noResult() {
+    this._$recipesSection.innerHTML = "<p>Aucune recette ne correspond à votre critère…</p>";
   }
 }

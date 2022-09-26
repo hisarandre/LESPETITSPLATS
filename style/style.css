@@ -7159,12 +7159,18 @@ textarea.form-control-lg {
     min-width: 100%;
   }
 }
+.combobox-wrapper.active .input-group {
+  z-index: -1;
+}
 .combobox-wrapper.active .content {
+  max-height: 24rem;
+  overflow: auto;
   line-height: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 0 0 0.5rem 0.5rem;
   margin-top: -10px;
+  z-index: 2;
   cursor: pointer;
 }
 .combobox-wrapper.active .fa-chevron-down {

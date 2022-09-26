@@ -4,7 +4,6 @@ export class Combobox {
     this._$inputIngredient = document.getElementById("ingredient");
     this._$inputAppareil = document.getElementById("appareil");
     this._$inputUstensil = document.getElementById("ustensil");
-    this._$options = document.querySelectorAll(".combobox-wrapper li");
   }
 
   handleEvent() {
@@ -14,20 +13,20 @@ export class Combobox {
       anyInput ? this.show(e) : this.reset();
     });
 
-    // hide element list if clicked
-    this._$options.forEach((option) =>
-      option.addEventListener("click", (e) => {
-        e.target.style.display = "none";
-      })
-    );
-
-    // filter input
     this._$inputs.forEach((input) =>
-      input.addEventListener("keyup", () => {
-        let $combolist = input.parentNode.parentNode.lastElementChild;
-        $combolist.innerHTML = "";
+      input.addEventListener("keyup", (e) => {
+        const category = e.target.dataset.category;
+        this.autocomplete(e, category);
       })
     );
+  }
+
+  autocomplete(e, category) {
+    let $list = Array.from(document.querySelectorAll(`.content.${category}s li`));
+    $list.forEach((tag) => (tag.style.display = "inline-block"));
+
+    const autocompleTag = $list.filter((tag) => !tag.dataset.option.includes(e.target.value));
+    autocompleTag.forEach((tag) => (tag.style.display = "none"));
   }
 
   show(e) {
@@ -44,6 +43,7 @@ export class Combobox {
     let $input = document.querySelector(".combobox-wrapper.active input");
     let $category = $input.dataset.category;
 
+    $input.value = "";
     $combobox.classList.remove("active");
     $input.setAttribute("placeholder", $category + "s");
   }

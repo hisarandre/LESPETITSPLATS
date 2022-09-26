@@ -1,24 +1,19 @@
-import { Recipe } from "../models/recipe.js";
 export class RecipeCard {
-  constructor() {
-    //this._data = data;
-  }
-
   createRecipeCard(data) {
     const $container = document.getElementById("recipes-section");
     const $template = document.getElementById("template");
     const clone = $template.content.cloneNode(true);
 
     let $title = clone.querySelector(".card-title");
-    $title.textContent = data.name;
+    $title.textContent = data._name;
 
     let $time = clone.querySelector(".card-timing");
-    $time.textContent = `${data.time} min`;
+    $time.textContent = `${data._time} min`;
 
     let $description = clone.querySelector(".card-text");
-    $description.textContent = data.description;
+    $description.textContent = data._description;
 
-    data.ingredients.forEach((ingredient) => {
+    data._ingredients.forEach((ingredient) => {
       const $list = clone.querySelector(".card-list");
       const $item = document.createElement("li");
 
@@ -43,10 +38,8 @@ export class RecipeCard {
   }
 
   render(recipes) {
-    recipes
-      .map((recipe) => new Recipe(recipe))
-      .forEach((recipe) => {
-        this.createRecipeCard(recipe);
-      });
+    recipes.forEach((recipe) => {
+      this.createRecipeCard(recipe);
+    });
   }
 }
