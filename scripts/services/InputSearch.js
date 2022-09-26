@@ -14,7 +14,7 @@ export class InputSearch {
       (recipe) =>
         recipe._name.toLowerCase().includes(entry.toLowerCase()) ||
         recipe._description.toLowerCase().includes(entry.toLowerCase()) ||
-        recipe._ingredients.map((recipe) => recipe.ingredient.toLowerCase()).some((ingredient) => ingredient.includes(entry.toLowerCase()))
+        recipe._ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(entry.toLowerCase()))
     );
 
     this.recipesFromInput = [];
